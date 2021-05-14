@@ -1,5 +1,5 @@
 const { fromEvent, range } = rxjs;
-const { filter, pluck, map } = rxjs.operators;
+const { filter, pluck, map, throttleTime } = rxjs.operators;
 
 const progressBar = document.getElementById('progress-bar');
 const getPercentage = (body) => {
@@ -20,6 +20,7 @@ const getPercentage = (body) => {
 // Getting the Scroll bar Observable
 const scroll$ = fromEvent(document, 'scroll');
 const progress$ = scroll$.pipe(
+    throttleTime(500),
     pluck('target', 'documentElement'),
     map(element => getPercentage(element)),
 )

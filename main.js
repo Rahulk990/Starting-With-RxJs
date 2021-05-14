@@ -1,4 +1,3 @@
-const { of, interval, fromEvent } = rxjs;
+const { fromEvent, timer } = rxjs;
 const { ajax } = rxjs.ajax;
-const { map, take, mergeAll, debounceTime, mergeMap, switchMap, concatMap, exhaustMap } = rxjs.operators;
-
+const { takeUntil, exhaustMap, tap, finalize, switchMap } = rxjs.operators;

@@ -29,7 +29,7 @@ subject.next('3');
 
 
 // Async Subject 
-const subject = new AsyncSubject(2);
+const subject = new AsyncSubject();
 const sub1 = subject.subscribe(observer);
 subject.next('1');
 const sub2 = subject.subscribe(observer);
